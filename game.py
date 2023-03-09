@@ -25,12 +25,12 @@ print(f"The computer chose {com_choice}\n")
 # Kondisi
 if play_choice == com_choice:
     print("Draw!!!")
-elif (play_choice == "rock" and com_choice == "scissors") or 
-     (play_choice == "scissors" and com_choice == "paper") or 
+elif (play_choice == "rock" and com_choice == "scissors") or \
+     (play_choice == "scissors" and com_choice == "paper") or \
      (play_choice == "paper" and com_choice == "rock"):
     print("Player Win!!!")
+
 else:
     print("Computer Win!!!.")
-
 
 

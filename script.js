@@ -55,7 +55,7 @@ function checkWinner() {
   } else if (player == "Paper") {
     if (computer == "Rock") {
       playerPoin++;
-      return "You Win!";
+      return "You Win!!";
     } else {
       computerPoin++;
       return "You Lose!";

@@ -1,1 +1,1 @@
-print('hi ini alan')
+gitprint('hi ini alan')

@@ -1,4 +1,3 @@
-print ('fadia')
 import random
 bot = ['rock','scissors','paper']
 

@@ -9,6 +9,16 @@ let computer;
 let playerPoin = 0;
 let computerPoin = 0;
 
+function reset() {
+  playerPoin = 0;
+  computerPoin = 0;
+  playerText.innerHTML = `Player: `;
+  computerText.innerHTML = `Computer: `;
+  resultText.innerHTML = `Result: `;
+  playerPoins.innerHTML = `Player Poin: ${playerPoin}`;
+  computerPoins.innerHTML = `Computer Poin: ${computerPoin}`;
+}
+
 function playerChoice(choice) {
   player = choice;
   playerText.innerHTML = `Player: ${player}`;
@@ -71,12 +81,3 @@ function checkWinner() {
   }
 }
 
-function reset() {
-  playerPoin = 0;
-  computerPoin = 0;
-  playerText.innerHTML = `Player: `;
-  computerText.innerHTML = `Computer: `;
-  resultText.innerHTML = `Result: `;
-  playerPoins.innerHTML = `Player Poin: ${playerPoin}`;
-  computerPoins.innerHTML = `Computer Poin: ${computerPoin}`;
-}

@@ -1,5 +1,6 @@
 import random
 import os
+print ("yang terbaruhhhh ")
 
 player_score = 0
 computer_score = 0
@@ -12,7 +13,7 @@ while player_pick != 0:
     for x in range (1,4):
         print (f"{x}. {suit_obj[x]}")
     print()
-    print("0. Exit the game")
+    print("0. Exit the gamesssss")
     player_pick = int(input(">> "))
     if player_pick != 0:
         print(f"You choose {suit_obj[player_pick]}")

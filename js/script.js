@@ -9,7 +9,6 @@ let computer;
 let playerPoin = 0;
 let computerPoin = 0;
 
-
 function computerChoice() {
   const randomNum = Math.floor(Math.random() * 3) + 1;
   switch (randomNum) {

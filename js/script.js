@@ -9,31 +9,6 @@ let computer;
 let playerPoin = 0;
 let computerPoin = 0;
 
-function reset() {
-  playerPoin = 0;
-  computerPoin = 0;
-  playerText.innerHTML = `Player: `;
-  computerText.innerHTML = `Computer: `;
-  resultText.innerHTML = `Result: `;
-  playerPoins.innerHTML = `Player Poin: ${playerPoin}`;
-  computerPoins.innerHTML = `Computer Poin: ${computerPoin}`;
-}
-
-function playerChoice(choice) {
-  player = choice;
-  playerText.innerHTML = `Player: ${player}`;
-  computerChoice();
-  resultText.innerHTML = checkWinner();
-  playerPoins.innerHTML = `Player Poin: ${playerPoin}`;
-  computerPoins.innerHTML = `Computer Poin: ${computerPoin}`;
-  if (playerPoin === 5) {
-    alert("You Win!, Play Again?");
-    reset();
-  } else if (computerPoin === 5) {
-    alert("You Lose!, Play Again?");
-    reset();
-  }
-}
 
 function computerChoice() {
   const randomNum = Math.floor(Math.random() * 3) + 1;
@@ -81,3 +56,28 @@ function checkWinner() {
   }
 }
 
+function reset() {
+  playerPoin = 0;
+  computerPoin = 0;
+  playerText.innerHTML = `Player: `;
+  computerText.innerHTML = `Computer: `;
+  resultText.innerHTML = `Result: `;
+  playerPoins.innerHTML = `Player Poin: ${playerPoin}`;
+  computerPoins.innerHTML = `Computer Poin: ${computerPoin}`;
+}
+
+function playerChoice(choice) {
+  player = choice;
+  playerText.innerHTML = `Player: ${player}`;
+  computerChoice();
+  resultText.innerHTML = checkWinner();
+  playerPoins.innerHTML = `Player Poin: ${playerPoin}`;
+  computerPoins.innerHTML = `Computer Poin: ${computerPoin}`;
+  if (playerPoin === 5) {
+    alert("You Win!, Play Again?");
+    reset();
+  } else if (computerPoin === 5) {
+    alert("You Lose!, Play Again?");
+    reset();
+  }
+}

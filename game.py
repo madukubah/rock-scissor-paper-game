@@ -2,7 +2,7 @@ import random
 
 options = ['rock', 'paper', 'scissors']
 
-print("Welcome to rock🪨, paper📃, scissors✂️!")
+print("Welcome to rock, paper, scissors!")
 
 # Start looping (While)
 while True:

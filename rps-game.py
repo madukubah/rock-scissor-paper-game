@@ -1,6 +1,6 @@
 import random
 
-print ('ini perubahan')
+
 # variable
 index = ['rock', 'paper', 'scissor']
 # user computer

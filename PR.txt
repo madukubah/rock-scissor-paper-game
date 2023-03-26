@@ -1,0 +1,7 @@
+1. player 2 di input oleh bukan komputer (user)
+2. kalo kurang puas dgn fungsi whos_win() , berikan versi terbaikmu
+    - whos_win()  terima 2 input dalam int (player dan player2)
+    - outputnya 
+        # 0 ->  draw
+        # 1 ->  player 1
+        # 2 ->  player 2

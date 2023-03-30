@@ -1,46 +1,70 @@
 import random
 
-options = ['rock', 'paper', 'scissors']
 
-print("Welcome to rock, paper, scissors!")
+def input_player_name(player_name):
+    while True:
+        try:
+            player = int(input(f"{player_name}, SELECT: "))
+            if player in [1, 2, 3]:
+                return player
+            else:
+                print("Invalid selection, enter a value between 1-3")
+        except ValueError:
+            print("Selection must be a number between 1-3")
 
-# Start looping (While)
-while True:
 
-    # user choices
-    player_choice = input("\nChoose your weapon (rock, paper, or scissors): ")
-    if player_choice not in options:
-        print("Invalid choice. Try again!")
-        continue
+def whos_win(player=0, player2=0):
+    # 0 =>  draw
+    # 1 =>  player 1
+    # 2 =>  player 2
+    winner = 0
+    win_dict = {
+        (1, 1): 0, (1, 2): 2, (1, 3): 1,
+        (2, 1): 1, (2, 2): 0, (2, 3): 2,
+        (3, 1): 2, (3, 2): 1, (3, 3): 0
+    }
+    if player != player2:
+        winner = win_dict[(player, player2)]
+    return winner
 
-# computer choices
-    computer_choice = random.choice(options)
 
-    print(f"\nYou chose {player_choice}.")
-    print(f"The computer chose {computer_choice}.")
+def display(option='menu', username='player 0', player=0, winner=0):
+    if option == 'menu':
+        print('\tGAME SUIT')
+        print('INPUT YOUR CHOICES = ')
+        print('1 => ROCK')
+        print('2 => PAPER')
+        print('3 => SCISSORS')
+    if option == 'SELECT':
+        print(username)
+        if player == 1:
+            print('\tSELECT => ROCK')
+        if player == 2:
+            print('\tSELECT => PAPER')
+        if player == 3:
+            print('\tSELECT => SCISSORS')
+    if option == 'WINNER':
+        if winner == 0:
+            print('DRAW')
+        if winner == 1:
+            print('WINNER IS: PLAYER 1')
+        if winner == 2:
+            print('WINNER IS: PLAYER 2')
+    return 1
 
-# check winner
-    if player_choice == computer_choice:
-        print("It's a tie!")
-    elif player_choice == 'rock':
-        if computer_choice == 'paper':
-            print("Paper covers rock. You lose!")
-        else:
-            print("Rock smashes scissors. You win!")
-    elif player_choice == 'paper':
-        if computer_choice == 'scissors':
-            print("Scissors cut paper. You lose!")
-        else:
-            print("Paper covers rock. You win!")
-    elif player_choice == 'scissors':
-        if computer_choice == 'rock':
-            print("Rock smashes scissors. You lose!")
-        else:
-            print("Scissors cut paper. You win!")
 
-# play again
-    play_again = input("\nDo you want to play again? (y/n): ")
-    if play_again.lower() != 'y':
-        break
+def gameLoop():
+    display('menu')
+    player = input_player_name('PLAYER 1')
+    display('SELECT', '\tPLAYER 1', player)
+    player2 = input_player_name('PLAYER 2')
+    display('SELECT', '\tPLAYER 2', player2)
 
-print("Thanks for playing!")
+    winner = whos_win(player, player2)
+
+    display('WINNER', '-', 0, winner)
+
+    return 1
+
+
+gameLoop()

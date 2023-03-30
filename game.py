@@ -1,31 +1,34 @@
-while True:
-    print("WELLCOME TO ROCK-SCISSOR-PAPER GAME!")
-    print('====================================')
-    print("PLAYER 1, PLEASE CHOOSE (R)ock, (S)cissors, or (P)aper.")
-    player1 = input("PLAYER 1 ENTER : ")
-    print("PLAYER 2, PLEASE CHOOSE (R)ock, (S)cissors, or (P)aper.")
-    player2 = input("PLAYER 2 ENTER : ")
-    print('====================================')
-    if player1 == player2:
-        print("DRAW!!!!")
-    elif player1 == "R":
-        if player2 == "S":
-            print("PLAYER 1 WIN!")
-        else:
-            print("PLAYER 2 WIN!")
-    elif player1 == "S":
-        if player2 == "P":
-            print("PLAYER 1 WIN!")
-        else:
-            print("PLAYER 2 WIN!")
-    elif player1 == "P":
-        if player2 == "R":
-            print("PLAYER 1 WIN!")
-        else:
-            print("PLAYER 2 WIN!")
+def whos_win(player, player2):
+    # 0 = scissors, 1 = rock, 2 = paper
+    if player == player2:
+        return 0
+    elif player == 0 and player2 == 1:
+        return 2
+    elif player == 0 and player2 == 2:
+        return 1
+    elif player == 1 and player2 == 0:
+        return 1
+    elif player == 1 and player2 == 2:
+        return 2
+    elif player == 2 and player2 == 0:
+        return 2
+    elif player == 2 and player2 == 1:
+        return 1
     else:
-        print("Invalid Input. Please enter R, S or P!")
+        return -1 # if input is not valid
 
-    next = input("Do you want to play again? (y/n): ")
-    if next == "n":
-        break
+# main program
+print("Welcome to Rock-Paper-Scissors Game!")
+print("Please enter player 1's choice: 0 = scissors, 1 = rock, 2 = paper")
+player1 = int(input())
+print("Please enter player 2's choice: 0 = scissors, 1 = rock, 2 = paper")
+player2 = int(input())
+
+# calling the whos_win() function and printing the result
+result = whos_win(player1, player2)
+if result == 0:
+    print("Result: Draw")
+elif result == 1:
+    print("Result: Player 1 wins")
+elif result == 2:
+    print("Result: Player 2 wins")

@@ -1,3 +1,4 @@
+#game
 def input_player(username):
     # print('input_player')
     choice = int(input(f"{username} CHOICE = "))

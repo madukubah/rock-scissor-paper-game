@@ -1,7 +1,7 @@
 import random
 
 
-def input_player_name(player_name):
+def get_player_choice(player_name):
     while True:
         try:
             player = int(input(f"{player_name}, SELECT: "))
@@ -13,7 +13,7 @@ def input_player_name(player_name):
             print("Selection must be a number between 1-3")
 
 
-def whos_win(player=0, player2=0):
+def check_winner(player=0, player2=0):
     # 0 =>  draw
     # 1 =>  player 1
     # 2 =>  player 2
@@ -55,12 +55,12 @@ def display(option='menu', username='player 0', player=0, winner=0):
 
 def gameLoop():
     display('menu')
-    player = input_player_name('PLAYER 1')
+    player = get_player_choice('PLAYER 1')
     display('SELECT', '\tPLAYER 1', player)
-    player2 = input_player_name('PLAYER 2')
+    player2 = get_player_choice('PLAYER 2')
     display('SELECT', '\tPLAYER 2', player2)
 
-    winner = whos_win(player, player2)
+    winner = check_winner(player, player2)
 
     display('WINNER', '-', 0, winner)
 

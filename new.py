@@ -22,7 +22,6 @@ def whos_win(player=0, player2=0):
         else:
             winner=2
     return winner
-    
 
 def display(option='menu', username='player 0',player=0, winner=0):
     if option=='menu':

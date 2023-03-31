@@ -1,49 +1,45 @@
 import random
+import os
 
-# variable
-index = ['rock', 'paper', 'scissor']
-# user computer
-computer = random.choice(index)
-# set variabel player = false
-player = False
+os.system('cls')
+print("------Rock Scissor Paper------")
+print('1.Rock')
+print('2.Scissor')
+print('3.Paper')
+print('------------------------------')
 
-while player == False :
-    # enter player selection
-    player = input("rock, paper, scissor = ")
-    if computer == player :
-        print("player = ", computer)
-        print("computer select = ", computer)
-        print("draw game!!")
-    elif player == 'rock':
-        print("Player = rock")
-        if computer == 'paper' :
-            print("computer select paper")
-            print("you lose!!!")
-        else :
-            print("computer select scissor")
-            print("you win!!!")
-    elif player == 'paper':
-        print("Player = paper")
-        if computer == 'scissor' :
-            print("computer select scissor")
-            print("you lose!!!")
-        else :
-            print("computer select rock")
-            print("you win!!!")
-    elif player == 'scissor':
-        print("Player = scissor")
-        if computer == 'rock' :
-            print("computer select rock")
-            print("you lose!!!")
-        else :
-            print("computer selected papper")
-            print("you win!!!")
-    else:
-        print("you choise wrong!!!, please reselect!!!")
-    play_again=input('Play Again(y/n)= ')
-    if play_again=='y':
-        player = False
-        computer = random.choice(index)
-    elif play_again=='n':
-        print("Game Over")
-        break
+choice = int(input('Input your choice (1/2/3): '))
+computer = random.choice(["Rock","Scissor","Paper"])
+
+if choice == 1:
+    print('User     : Rock')
+    print('Computer :', computer)
+    if computer == 'Rock':
+        print('same result')
+    elif computer == 'Scissor':
+        print('You win')
+    elif computer == 'Paper':
+        print('You lose')
+        
+elif choice == 2:
+    print('User     : Scissor')
+    print('Computer :', computer)
+    if computer == 'Rock':
+        print('You lose')
+    elif computer == 'Scissor':
+        print('same result')
+    elif computer == 'Paper':
+        print('You win')
+
+elif choice == 3:
+    print('User     : Paper')
+    print('Computer :', computer)
+    if computer == 'Rock':
+        print('You win')
+    elif computer == 'Scissor':
+        print('You lose')
+    elif computer == 'Paper':
+        print('same result')
+        
+else:
+    print('no options!')
